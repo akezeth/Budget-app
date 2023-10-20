@@ -19,7 +19,7 @@
             <h3><%= category.name %></h3>
             <p><%= category.created_at %></p>
           </div>
-          <p>$ <%= category.transactions.sum(:amount) %></p>
+          <p>$ <%= category.expenses.sum(:amount) %></p>
         </div>
       <% end %>
     <% end %>

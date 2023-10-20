@@ -8,19 +8,19 @@
   </div>
   <div class="category-header">
     <p><%= @category.name %></p>
-    <p>$ <%= @category.purchases.sum(:amount) %></p>
+    <p>$ <%= @category.expenses.sum(:amount) %></p>
   </div>
-  <div class="purchases-container">
-    <% @category.purchases.each do |purchase| %>
-      <div class="purchase-item">
-        <%= link_to purchase.name, category_purchase_path(@category, purchase) %>
-        $ <%= purchase.amount %>
+  <div class="expenses-container">
+    <% @category.expenses.each do |expense| %>
+      <div class="expense-item">
+        <%= link_to expense.name, category_expense_path(@category, expense) %>
+        $ <%= expense.amount %>
       </div>
     <% end %>
   </div>
   <div class="new-category">
     <div class="new-category-inner">
-      <%= link_to "Add a New Purchase", new_category_purchase_path(@category) %>
+      <%= link_to "Add a New expense", new_category_expense_path(@category) %>
     </div>
   </div>
 </div>

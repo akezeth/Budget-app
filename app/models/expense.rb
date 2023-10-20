@@ -1,7 +1,7 @@
-class Transaction < ApplicationRecord
+class Expense < ApplicationRecord
   belongs_to :user
-  has_many :transaction_categories
-  has_many :transactions, through: :transaction_categories
+  has_many :expense_categories
+  has_many :expenses, through: :expense_categories
 
   validates :name, presence: true
   validates :amount, presence: true

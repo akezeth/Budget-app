@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     resources :categories do
-      resources :purchases
+      resources :expenses
     end
   end
 
