@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
   end
 
   def show
-    @expense = expense.find(params[:id])
+    @expense = Expense.find(params[:id])
   end
 
   def new
@@ -34,7 +34,7 @@ class ExpensesController < ApplicationController
         ExpenseCategory.create(expense_id: @expense.id, category_id:)
       end
 
-      redirect_to category_path(primary_category_id), notice: 'expense was successfully created.'
+      redirect_to category_path(primary_category_id), notice: 'Expense was successfully created.'
     else
       @categories = current_user.categories
       render :new
@@ -46,7 +46,7 @@ class ExpensesController < ApplicationController
   def update
     if @expense.update(expense_params)
       @expense.category_ids = params[:expense][:category_ids]
-      redirect_to @expense, notice: 'expense was successfully updated.'
+      redirect_to @expense, notice: 'Expense was successfully updated.'
     else
       render :edit
     end
@@ -54,13 +54,13 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense.destroy
-    redirect_to expenses_url, notice: 'expense was successfully destroyed.'
+    redirect_to expenses_url, notice: 'Expense was successfully destroyed.'
   end
 
   private
 
   def set_expense
-    @expense = expense.find(params[:id])
+    @expense = Expense.find(params[:id])
   end
 
   def expense_params
