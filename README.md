@@ -57,7 +57,7 @@
 
 ### Demo Video
 
-- <a href="https://drive.google.com/drive/u/0/search?q=rails%20capstone">Click Here</a>
+- <a href="https://drive.google.com/file/d/1tL_gNPsbEB2tO3vXgm2BmcNGNpO0npVF/view?usp=share_link">Click Here</a>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
