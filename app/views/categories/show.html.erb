@@ -1,0 +1,26 @@
+<div class="full-page">
+  <div class="navigation">
+    <ul>
+      <li><%= link_to image_tag('backarrow.png', alt: 'Back'), categories_path, class: 'nav-link' %></li>
+      <h2><%= @category.name %></h2>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %></li>
+    </ul>
+  </div>
+  <div class="category-header">
+    <p><%= @category.name %></p>
+    <p>$ <%= @category.expenses.sum(:amount) %></p>
+  </div>
+  <div class="expenses-container">
+    <% @category.expenses.each do |expense| %>
+      <div class="expense-item">
+        <%= link_to expense.name, category_expense_path(@category, expense) %>
+        $ <%= expense.amount %>
+      </div>
+    <% end %>
+  </div>
+  <div class="new-category">
+    <div class="new-category-inner">
+      <%= link_to "Add a New expense", new_category_expense_path(@category) %>
+    </div>
+  </div>
+</div>
