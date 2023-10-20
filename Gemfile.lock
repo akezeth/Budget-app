@@ -278,6 +278,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bundler
   capybara
   debug
   devise
